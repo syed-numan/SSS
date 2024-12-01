@@ -1,0 +1,694 @@
+{
+    "bandit": {
+        "status": "success",
+        "results": [
+            {
+                "code": "62         __version_contents = fh.read()\n63     exec(__version_contents, __namespace)\n64 else:\n",
+                "col_offset": 4,
+                "end_col_offset": 41,
+                "filename": "open_source_repos\\flask-restful\\docs\\conf.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "MEDIUM",
+                "issue_text": "Use of exec detected.",
+                "line_number": 63,
+                "line_range": [
+                    63
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b102_exec_used.html",
+                "test_id": "B102",
+                "test_name": "exec_used"
+            },
+            {
+                "code": "58 if __name__ == '__main__':\n59     app.run(debug=True)\n",
+                "col_offset": 4,
+                "end_col_offset": 23,
+                "filename": "open_source_repos\\flask-restful\\examples\\todo.py",
+                "issue_confidence": "MEDIUM",
+                "issue_cwe": {
+                    "id": 94,
+                    "link": "https://cwe.mitre.org/data/definitions/94.html"
+                },
+                "issue_severity": "HIGH",
+                "issue_text": "A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.",
+                "line_number": 59,
+                "line_range": [
+                    59
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b201_flask_debug_true.html",
+                "test_id": "B201",
+                "test_name": "flask_debug_true"
+            },
+            {
+                "code": "33 if __name__ == '__main__':\n34     app.run(debug=True)\n35 \n",
+                "col_offset": 4,
+                "end_col_offset": 23,
+                "filename": "open_source_repos\\flask-restful\\examples\\xml_representation.py",
+                "issue_confidence": "MEDIUM",
+                "issue_cwe": {
+                    "id": 94,
+                    "link": "https://cwe.mitre.org/data/definitions/94.html"
+                },
+                "issue_severity": "HIGH",
+                "issue_text": "A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.",
+                "line_number": 34,
+                "line_range": [
+                    34
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b201_flask_debug_true.html",
+                "test_id": "B201",
+                "test_name": "flask_debug_true"
+            },
+            {
+                "code": "263             return self.catch_all_404s\n264         except:\n265             # Werkzeug throws other kinds of exceptions, such as Redirect\n266             pass\n267 \n",
+                "col_offset": 8,
+                "end_col_offset": 16,
+                "filename": "open_source_repos\\flask-restful\\flask_restful\\__init__.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Try, Except, Pass detected.",
+                "line_number": 264,
+                "line_range": [
+                    264,
+                    265,
+                    266
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b110_try_except_pass.html",
+                "test_id": "B110",
+                "test_name": "try_except_pass"
+            },
+            {
+                "code": "295                 return self.handle_error(e)\n296             except Exception:\n297                 pass  # Fall through to original handler\n298         return original_handler(e)\n",
+                "col_offset": 12,
+                "end_col_offset": 20,
+                "filename": "open_source_repos\\flask-restful\\flask_restful\\__init__.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Try, Except, Pass detected.",
+                "line_number": 296,
+                "line_range": [
+                    296,
+                    297
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b110_try_except_pass.html",
+                "test_id": "B110",
+                "test_name": "try_except_pass"
+            },
+            {
+                "code": "593             meth = getattr(self, 'get', None)\n594         assert meth is not None, 'Unimplemented method %r' % request.method\n595 \n",
+                "col_offset": 8,
+                "end_col_offset": 75,
+                "filename": "open_source_repos\\flask-restful\\flask_restful\\__init__.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 594,
+                "line_range": [
+                    594
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1 import pickle\n2 from Crypto.Cipher import AES\n3 from base64 import b64encode, b64decode\n",
+                "col_offset": 0,
+                "end_col_offset": 13,
+                "filename": "open_source_repos\\flask-restful\\flask_restful\\utils\\crypto.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 502,
+                    "link": "https://cwe.mitre.org/data/definitions/502.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Consider possible security implications associated with pickle module.",
+                "line_number": 1,
+                "line_range": [
+                    1
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/blacklists/blacklist_imports.html#b403-import-pickle",
+                "test_id": "B403",
+                "test_name": "blacklist"
+            },
+            {
+                "code": "1 import pickle\n2 from Crypto.Cipher import AES\n3 from base64 import b64encode, b64decode\n",
+                "col_offset": 0,
+                "end_col_offset": 29,
+                "filename": "open_source_repos\\flask-restful\\flask_restful\\utils\\crypto.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 327,
+                    "link": "https://cwe.mitre.org/data/definitions/327.html"
+                },
+                "issue_severity": "HIGH",
+                "issue_text": "The pyCrypto library and its module AES are no longer actively maintained and have been deprecated. Consider using pyca/cryptography library.",
+                "line_number": 2,
+                "line_range": [
+                    2
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/blacklists/blacklist_imports.html#b413-import-pycrypto",
+                "test_id": "B413",
+                "test_name": "blacklist"
+            },
+            {
+                "code": "34 def decrypt(encrypted_data, key, seed):\n35     return pickle.loads(strip(create_cipher(key, seed).decrypt(b64decode(encrypted_data))))\n",
+                "col_offset": 11,
+                "end_col_offset": 91,
+                "filename": "open_source_repos\\flask-restful\\flask_restful\\utils\\crypto.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 502,
+                    "link": "https://cwe.mitre.org/data/definitions/502.html"
+                },
+                "issue_severity": "MEDIUM",
+                "issue_text": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+                "line_number": 35,
+                "line_range": [
+                    35
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/blacklists/blacklist_calls.html#b301-pickle",
+                "test_id": "B301",
+                "test_name": "blacklist"
+            },
+            {
+                "code": "1 import argparse\n2 import subprocess\n3 \n",
+                "col_offset": 0,
+                "end_col_offset": 17,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Consider possible security implications associated with the subprocess module.",
+                "line_number": 2,
+                "line_range": [
+                    2
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/blacklists/blacklist_imports.html#b404-import-subprocess",
+                "test_id": "B404",
+                "test_name": "blacklist"
+            },
+            {
+                "code": "15 \n16     branch = subprocess.check_output(['git', 'branch']).strip()\n17 \n",
+                "col_offset": 13,
+                "end_col_offset": 55,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Starting a process with a partial executable path",
+                "line_number": 16,
+                "line_range": [
+                    16
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b607_start_process_with_partial_path.html",
+                "test_id": "B607",
+                "test_name": "start_process_with_partial_path"
+            },
+            {
+                "code": "15 \n16     branch = subprocess.check_output(['git', 'branch']).strip()\n17 \n",
+                "col_offset": 13,
+                "end_col_offset": 55,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "subprocess call - check for execution of untrusted input.",
+                "line_number": 16,
+                "line_range": [
+                    16
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b603_subprocess_without_shell_equals_true.html",
+                "test_id": "B603",
+                "test_name": "subprocess_without_shell_equals_true"
+            },
+            {
+                "code": "20 \n21     if len(subprocess.check_output([\"git\", \"status\", \"-s\"]).strip()) > 0:\n22         raise Exception(\"Uncommitted changes, please commit or stash\")\n",
+                "col_offset": 11,
+                "end_col_offset": 59,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Starting a process with a partial executable path",
+                "line_number": 21,
+                "line_range": [
+                    21
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b607_start_process_with_partial_path.html",
+                "test_id": "B607",
+                "test_name": "start_process_with_partial_path"
+            },
+            {
+                "code": "20 \n21     if len(subprocess.check_output([\"git\", \"status\", \"-s\"]).strip()) > 0:\n22         raise Exception(\"Uncommitted changes, please commit or stash\")\n",
+                "col_offset": 11,
+                "end_col_offset": 59,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "subprocess call - check for execution of untrusted input.",
+                "line_number": 21,
+                "line_range": [
+                    21
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b603_subprocess_without_shell_equals_true.html",
+                "test_id": "B603",
+                "test_name": "subprocess_without_shell_equals_true"
+            },
+            {
+                "code": "23 \n24     subprocess.call([\"git\", \"tag\", args.version])\n25     subprocess.call([\"git\", \"push\", \"origin\", \"master\"])\n",
+                "col_offset": 4,
+                "end_col_offset": 49,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Starting a process with a partial executable path",
+                "line_number": 24,
+                "line_range": [
+                    24
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b607_start_process_with_partial_path.html",
+                "test_id": "B607",
+                "test_name": "start_process_with_partial_path"
+            },
+            {
+                "code": "23 \n24     subprocess.call([\"git\", \"tag\", args.version])\n25     subprocess.call([\"git\", \"push\", \"origin\", \"master\"])\n",
+                "col_offset": 4,
+                "end_col_offset": 49,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "subprocess call - check for execution of untrusted input.",
+                "line_number": 24,
+                "line_range": [
+                    24
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b603_subprocess_without_shell_equals_true.html",
+                "test_id": "B603",
+                "test_name": "subprocess_without_shell_equals_true"
+            },
+            {
+                "code": "24     subprocess.call([\"git\", \"tag\", args.version])\n25     subprocess.call([\"git\", \"push\", \"origin\", \"master\"])\n26     subprocess.call([\"git\", \"push\", \"--tags\"])\n",
+                "col_offset": 4,
+                "end_col_offset": 56,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Starting a process with a partial executable path",
+                "line_number": 25,
+                "line_range": [
+                    25
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b607_start_process_with_partial_path.html",
+                "test_id": "B607",
+                "test_name": "start_process_with_partial_path"
+            },
+            {
+                "code": "24     subprocess.call([\"git\", \"tag\", args.version])\n25     subprocess.call([\"git\", \"push\", \"origin\", \"master\"])\n26     subprocess.call([\"git\", \"push\", \"--tags\"])\n",
+                "col_offset": 4,
+                "end_col_offset": 56,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "subprocess call - check for execution of untrusted input.",
+                "line_number": 25,
+                "line_range": [
+                    25
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b603_subprocess_without_shell_equals_true.html",
+                "test_id": "B603",
+                "test_name": "subprocess_without_shell_equals_true"
+            },
+            {
+                "code": "25     subprocess.call([\"git\", \"push\", \"origin\", \"master\"])\n26     subprocess.call([\"git\", \"push\", \"--tags\"])\n27     subprocess.call([\"python\", \"setup.py\", \"sdist\", \"upload\"])\n",
+                "col_offset": 4,
+                "end_col_offset": 46,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Starting a process with a partial executable path",
+                "line_number": 26,
+                "line_range": [
+                    26
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b607_start_process_with_partial_path.html",
+                "test_id": "B607",
+                "test_name": "start_process_with_partial_path"
+            },
+            {
+                "code": "25     subprocess.call([\"git\", \"push\", \"origin\", \"master\"])\n26     subprocess.call([\"git\", \"push\", \"--tags\"])\n27     subprocess.call([\"python\", \"setup.py\", \"sdist\", \"upload\"])\n",
+                "col_offset": 4,
+                "end_col_offset": 46,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "subprocess call - check for execution of untrusted input.",
+                "line_number": 26,
+                "line_range": [
+                    26
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b603_subprocess_without_shell_equals_true.html",
+                "test_id": "B603",
+                "test_name": "subprocess_without_shell_equals_true"
+            },
+            {
+                "code": "26     subprocess.call([\"git\", \"push\", \"--tags\"])\n27     subprocess.call([\"python\", \"setup.py\", \"sdist\", \"upload\"])\n28 \n",
+                "col_offset": 4,
+                "end_col_offset": 62,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Starting a process with a partial executable path",
+                "line_number": 27,
+                "line_range": [
+                    27
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b607_start_process_with_partial_path.html",
+                "test_id": "B607",
+                "test_name": "start_process_with_partial_path"
+            },
+            {
+                "code": "26     subprocess.call([\"git\", \"push\", \"--tags\"])\n27     subprocess.call([\"python\", \"setup.py\", \"sdist\", \"upload\"])\n28 \n",
+                "col_offset": 4,
+                "end_col_offset": 62,
+                "filename": "open_source_repos\\flask-restful\\scripts\\release.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 78,
+                    "link": "https://cwe.mitre.org/data/definitions/78.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "subprocess call - check for execution of untrusted input.",
+                "line_number": 27,
+                "line_range": [
+                    27
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b603_subprocess_without_shell_equals_true.html",
+                "test_id": "B603",
+                "test_name": "subprocess_without_shell_equals_true"
+            },
+            {
+                "code": "761             flask_restful.abort(404, foo='bar')\n762             assert False  # We should never get here\n763         except Exception as e:\n",
+                "col_offset": 12,
+                "end_col_offset": 24,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 762,
+                "line_range": [
+                    762
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "768             flask_restful.abort(404)\n769             assert False  # We should never get here\n770         except Exception as e:\n",
+                "col_offset": 12,
+                "end_col_offset": 24,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 769,
+                "line_range": [
+                    769
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "775             flask_restful.abort(404, message=\"no user\")\n776             assert False  # We should never get here\n777         except Exception as e:\n",
+                "col_offset": 12,
+                "end_col_offset": 24,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 776,
+                "line_range": [
+                    776
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1040             r = TestResource().dispatch_request()\n1041             assert r == 'post test'\n1042 \n",
+                "col_offset": 12,
+                "end_col_offset": 35,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 1041,
+                "line_range": [
+                    1041
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1044             r = TestResource().dispatch_request()\n1045             assert r == 'GET TEST'\n1046 \n",
+                "col_offset": 12,
+                "end_col_offset": 34,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 1045,
+                "line_range": [
+                    1045
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1065             r = TestResource().dispatch_request()\n1066             assert r == 'POST TEST'\n1067 \n",
+                "col_offset": 12,
+                "end_col_offset": 35,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 1066,
+                "line_range": [
+                    1066
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1069             r = TestResource().dispatch_request()\n1070             assert r == 'GET TEST'\n1071 \n",
+                "col_offset": 12,
+                "end_col_offset": 34,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 1070,
+                "line_range": [
+                    1070
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1088 \n1089         assert r.get() == 'get test'\n1090         assert r.post() == 'post test'\n",
+                "col_offset": 8,
+                "end_col_offset": 36,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 1089,
+                "line_range": [
+                    1089
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "1089         assert r.get() == 'get test'\n1090         assert r.post() == 'post test'\n1091 \n",
+                "col_offset": 8,
+                "end_col_offset": 38,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_api.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 1090,
+                "line_range": [
+                    1090
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "62         inputs.url(value)\n63         assert False, \"shouldn't get here\"\n64     except ValueError as e:\n",
+                "col_offset": 8,
+                "end_col_offset": 42,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_inputs.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 63,
+                "line_range": [
+                    63
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "104         inputs.url(value)\n105         assert False, u\"inputs.url({0}) should raise an exception\".format(value)\n106     except ValueError as e:\n",
+                "col_offset": 8,
+                "end_col_offset": 80,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_inputs.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 105,
+                "line_range": [
+                    105
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            },
+            {
+                "code": "405         return\n406     assert False, 'Should raise a ValueError'\n407 \n",
+                "col_offset": 4,
+                "end_col_offset": 45,
+                "filename": "open_source_repos\\flask-restful\\tests\\test_inputs.py",
+                "issue_confidence": "HIGH",
+                "issue_cwe": {
+                    "id": 703,
+                    "link": "https://cwe.mitre.org/data/definitions/703.html"
+                },
+                "issue_severity": "LOW",
+                "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+                "line_number": 406,
+                "line_range": [
+                    406
+                ],
+                "more_info": "https://bandit.readthedocs.io/en/1.7.10/plugins/b101_assert_used.html",
+                "test_id": "B101",
+                "test_name": "assert_used"
+            }
+        ]
+    },
+    "safety": {
+        "status": "failed",
+        "error": "Placeholder requirements.txt"
+    }
+}
